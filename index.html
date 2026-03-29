@@ -209,7 +209,7 @@
 </div>
 
 <script>
-  const TALLY_FORM_ID = 'zxZ6W8';
+
   let selectedProduct = null;
   let selectedLabel = null;
 
@@ -263,18 +263,13 @@
     btn.innerHTML = '<div class="spinner"></div>';
 
     try {
-      // Submit to Tally via their hidden form endpoint
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('product', selectedProduct);
-
-      await fetch('https://tally.so/r/' + TALLY_FORM_ID, {
+      await fetch('https://stanley-leads.daniel-c5f.workers.dev', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, product: selectedProduct })
       });
     } catch(e) {
-      // no-cors means we can't read response, but submission goes through
+      // fail silently, show success anyway
     }
 
     goToScreen(3);
