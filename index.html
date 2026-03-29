@@ -219,7 +219,7 @@
     ['dot1','dot2','dot3'].forEach((id, i) => {
       const dot = document.getElementById(id);
       dot.className = 'step-dot';
-      if (i + 1 < n) dot.classList.add('done');
+      if (i + 1 < n || (i + 1 === n && n === 3)) dot.classList.add('done');
       else if (i + 1 === n) dot.classList.add('active');
     });
   }
