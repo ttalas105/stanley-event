@@ -121,8 +121,7 @@
   .success-msg { font-size: 0.95rem; color: var(--muted); line-height: 1.6; text-align: center; max-width: 300px; margin: 0 auto 28px; }
   .success-tag { display: flex; justify-content: center; }
   .success-tag span { display: inline-flex; align-items: center; gap: 8px; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 99px; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; color: var(--teal); }
-  .success-tag.no-icon svg { display: none; }
-  .success-tag.no-icon span { gap: 0; }
+  .success-tag.no-icon #successTagIcon { display: none; }
 </style>
 </head>
 <body>
@@ -209,9 +208,9 @@
     </div>
     <h2 class="success-title">You're on the list 🎉</h2>
     <p class="success-msg">Thanks! A member of the Stan team will be in touch soon.</p>
-    <div class="success-tag">
+    <div class="success-tag" id="successTag">
       <span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        <svg id="successTagIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
         <span id="successLabel">Stan Store</span>
       </span>
     </div>
@@ -239,7 +238,7 @@
     selectedLabel = label;
     document.getElementById('badgeLabel').textContent = label;
     document.getElementById('successLabel').textContent = label;
-    document.querySelector('.success-tag').classList.toggle('no-icon', value === 'not-sure');
+    document.getElementById('successTag').classList.toggle('no-icon', value === 'not-sure');
     goToScreen(2);
     setTimeout(() => document.getElementById('emailInput').focus(), 100);
   }
