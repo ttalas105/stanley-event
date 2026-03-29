@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Stanley Pass to Wallet</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background: #1e1e2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, 'Inter', sans-serif;
+    padding: 24px;
+  }
+  .card {
+    background: #28283a;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 40px 32px;
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+  }
+  .logo { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 20px; display: block; }
+  h1 { color: #fff; font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+  p { color: #8888a0; font-size: 0.9rem; line-height: 1.5; margin-bottom: 32px; }
+  .wallet-btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s;
+  }
+  .wallet-btn:hover { opacity: 0.85; }
+  .wallet-btn img { height: 44px; display: block; }
+  .note { margin-top: 20px; font-size: 0.75rem; color: #555570; }
+</style>
+</head>
+<body>
+<div class="card">
+  <img class="logo" src="https://ttalas105.github.io/stanley-event/logo.png" onerror="this.style.display='none'" alt="Stan">
+  <h1>Stanley Event Pass</h1>
+  <p>Tap the button below to add the Stanley QR pass to your Apple Wallet. Use it at events to quickly share your product interest.</p>
+  <a class="wallet-btn" href="stanley.pkpass">
+    <img src="https://developer.apple.com/wallet/add-to-apple-wallet-guidelines/images/add-to-apple-wallet-badge.svg" alt="Add to Apple Wallet">
+  </a>
+  <p class="note">iPhone only · Tap opens directly in Safari</p>
+</div>
+</body>
+</html>
